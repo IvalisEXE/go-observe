@@ -1,6 +1,6 @@
 # corelogger
 
-Central logging library buat semua squad. Structured JSON log (via `zerolog`),
+Central logging library. Structured JSON log (via `zerolog`),
 gampang ditarik ke ELK/Loki/Grafana. Semua log punya `request_id` yang sama
 dari masuk request sampe keluar ke DB/Redis/API/MinIO, jadi satu request bisa
 di-trace penuh cukup filter `request_id`.
@@ -61,7 +61,7 @@ Semua log otomatis punya field:
 **Upload/download MinIO** → `type: minio`
 **Panic** → `type: panic` (dengan `stack_trace`)
 
-## Aturan buat squad
+## Aturan 
 
 1. **Wajib** panggil `corelogger.Init()` sekali di `main.go`.
 2. **Wajib** pasang `httpmw.RequestLogger()` sebagai middleware paling atas.
